@@ -1,0 +1,304 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    /* Whiskey Section Styles */
+    .tab-content {
+        display: none;
+        padding: 20px 0;
+    }
+    
+    .tab-content.active {
+        display: block;
+        animation: fadeIn 0.5s ease-out;
+    }
+    
+    .subcategory-title {
+        font-size: 1.8rem;
+        color: #333;
+        margin: 30px 0 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #d4a762;
+        position: relative;
+    }
+    
+    .subcategory-title::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100px;
+        height: 2px;
+        background: #8b5a2b;
+    }
+    
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+    
+    .product-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .product-img {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .category-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .product-card:hover .category-img {
+        transform: scale(1.05);
+    }
+    
+    .product-info {
+        padding: 15px;
+    }
+    
+    .product-title {
+        font-size: 1.1rem;
+        margin: 0 0 8px;
+        color: #333;
+    }
+    
+    .product-price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #8b5a2b;
+        margin: 0 0 15px;
+    }
+    
+    .product-detail-btn {
+        width: 100%;
+        padding: 10px;
+        background: linear-gradient(to right, #8b5a2b, #d4a762);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .product-detail-btn:hover {
+        background: linear-gradient(to right, #7a4b23, #c49655);
+        box-shadow: 0 3px 10px rgba(139, 90, 43, 0.3);
+    }
+    
+    .view-more {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .view-more .btn {
+        padding: 12px 30px;
+        background: transparent;
+        border: 2px solid #8b5a2b;
+        color: #8b5a2b;
+        font-weight: 600;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+    
+    .view-more .btn:hover {
+        background: #8b5a2b;
+        color: white;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+  <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Find Premium Liquor Stores Near You</h1>
+            <p>Discover the best selection of whiskey, rum, vodka, gin, county and  craft cocktails from local stores</p>
+            <div class="search-container">
+                <input type="text" placeholder="Enter your location..." id="location-input">
+                <button id="search-btn">Find Stores</button>
+            </div>
+        </div>
+    </section>
+   
+     <section class="featured" id="spirits">
+          <div class="container">
+            <h2 class="section-title">Explore Premium Spirits</h2>
+            
+            
+            
+            <!-- Whiskey Tab -->
+            <div class="tab-content active" id="whiskey-tab">
+                <h3 class="subcategory-title">Single Malt Whiskey</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="{% static 'images/image1.1.jpg' %}"
+                            style="width: 100%; 
+                height: 100%; 
+                object-fit: cover; 
+                object-position: center;"> 
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Glenfiddich 12 Year</h3>
+                            <p class="product-price">KSh 7,500</p>
+                            <button class="btn product-detail-btn" data-product="glenfiddich">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                               <img src="{% static 'images/image1.2.jpg' %}"
+                            style="width: 100%; 
+                height: 100%; 
+                object-fit: cover; 
+                object-position: center;"> 
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Macallan 12 Year</h3>
+                            <p class="product-price">KSh 12,800</p>
+                            <button class="btn product-detail-btn" data-product="macallan">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                              <img src="{% static 'images/image1.2.jpg' %}"
+                            style="width: 100%; 
+                height: 100%; 
+                object-fit: cover; 
+                object-position: center;"> 
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Glenmorangie 10 Year</h3>
+                            <p class="product-price">KSh 6,500</p>
+                            <button class="btn product-detail-btn" data-product="glenmorangie">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="/api/placeholder/400/300" alt="Dalmore 15 Year" class="category-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Dalmore 15 Year</h3>
+                            <p class="product-price">KSh 18,900</p>
+                            <button class="btn product-detail-btn" data-product="dalmore">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="subcategory-title">Blended Whiskey</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="/api/placeholder/400/300" alt="Johnnie Walker Blue" class="category-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Johnnie Walker Blue</h3>
+                            <p class="product-price">KSh 35,000</p>
+                            <button class="btn product-detail-btn" data-product="jwblue">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="/api/placeholder/400/300" alt="Chivas Regal 18" class="category-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Chivas Regal 18</h3>
+                            <p class="product-price">KSh 9,500</p>
+                            <button class="btn product-detail-btn" data-product="chivas">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="/api/placeholder/400/300" alt="Ballantine's 17 Year" class="category-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Ballantine's 17 Year</h3>
+                            <p class="product-price">KSh 12,500</p>
+                            <button class="btn product-detail-btn" data-product="ballantines">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="/api/placeholder/400/300" alt="Jameson Black Barrel" class="category-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Jameson Black Barrel</h3>
+                            <p class="product-price">KSh 5,200</p>
+                            <button class="btn product-detail-btn" data-product="jameson">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="subcategory-title">Bourbon & American Whiskey</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="/api/placeholder/400/300" alt="Jack Daniel's Single Barrel" class="category-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Jack Daniel's Single Barrel</h3>
+                            <p class="product-price">KSh 7,800</p>
+                            <button class="btn product-detail-btn" data-product="jackdaniels">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="/api/placeholder/400/300" alt="Maker's Mark" class="category-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Maker's Mark</h3>
+                            <p class="product-price">KSh 4,500</p>
+                            <button class="btn product-detail-btn" data-product="makersmark">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="/api/placeholder/400/300" alt="Buffalo Trace" class="category-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Buffalo Trace</h3>
+                            <p class="product-price">KSh 4,200</p>
+                            <button class="btn product-detail-btn" data-product="buffalotrace">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="/api/placeholder/400/300" alt="Wild Turkey 101" class="category-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Wild Turkey 101</h3>
+                            <p class="product-price">KSh 3,800</p>
+                            <button class="btn product-detail-btn" data-product="wildturkey">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="view-more">
+                    <button class="btn">View All Whiskey</button>
+                </div>
+            </div>
+            
+           
+     </section>
+       
+            
+{% endblock content %}

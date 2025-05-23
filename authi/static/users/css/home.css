@@ -1,0 +1,176 @@
+  .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background-color: black;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            color: aliceblue;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+           .search-container {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-container input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+        }
+
+        .search-container button {
+            padding: 15px 20px;
+            border: none;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+ 
+    /* Whiskey Section Styles */
+    .tab-content {
+        display: none;
+        padding: 20px 0;
+    }
+    
+    .tab-content.active {
+        display: block;
+        animation: fadeIn 0.5s ease-out;
+    }
+    
+    .subcategory-title {
+        font-size: 1.8rem;
+        color: #333;
+        margin: 30px 0 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #d4a762;
+        position: relative;
+    }
+    
+    .subcategory-title::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100px;
+        height: 2px;
+        background: #8b5a2b;
+    }
+    
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+    
+    .product-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .product-img {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .category-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .product-card:hover .category-img {
+        transform: scale(1.05);
+    }
+    
+    .product-info {
+        padding: 15px;
+    }
+    
+    .product-title {
+        font-size: 1.1rem;
+        margin: 0 0 8px;
+        color: #333;
+    }
+    
+    .product-price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #8b5a2b;
+        margin: 0 0 15px;
+    }
+    
+    .product-detail-btn {
+        width: 100%;
+        padding: 10px;
+        background: linear-gradient(to right, #8b5a2b, #d4a762);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .product-detail-btn:hover {
+        background: linear-gradient(to right, #7a4b23, #c49655);
+        box-shadow: 0 3px 10px rgba(139, 90, 43, 0.3);
+    }
+    
+    .view-more {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .view-more .btn {
+        padding: 12px 30px;
+        background: transparent;
+        border: 2px solid #8b5a2b;
+        color: #8b5a2b;
+        font-weight: 600;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+    
+    .view-more .btn:hover {
+        background: #8b5a2b;
+        color: white;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
