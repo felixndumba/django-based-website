@@ -20,21 +20,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
   </head>
-  <body id="bg" style="background-image: url({% static 'users/images/bg.png' %});">
+  <body id="bg" >
   {% load static %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="main-navbar">
-        <div class="container">
-          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/in-logo-1.svg' %}" alt="" ></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="logo">Spirit Finder</div>
+    <nav class="navbar navbar-expand-lg  fixed-top bg-dark border-bottom border-body data-bs-theme="dark"" id="main-navbar">
+        <div class="container-fluid">
+            <h1 id="logo">Spirit Finder</h1>
           
-            <nav class="navbar-nav" >
+            <nav class="navbar"  data-bs-theme="light" >
                 
-                    <a class="nav-link active" aria-current="page"  href="#home">HOME</a>
-                    <a class="nav-link" href="{% url 'findstore' %}">FIND STORE</a>
+                    <a class="nav-link "  href="#home">HOME</a>
+                    <a class="nav-link " href="{% url 'findstore' %}">FIND STORE</a>
                     <a class="nav-link" href="{% url 'fproducts' %}">TOP PICKS</a>
                     <a class="nav-link" href="{% url 'payment' %}">PAYMENT</a>
                     <a class="nav-link" href="#contact">CONTACT</a>
@@ -42,13 +37,13 @@
             </nav>
             
         </div>
-            <form class="d-flex ms-auto" id="authstyle">
+            <form class="d-flex ms-auto">
               {% if user.is_authenticated %}
-                <a href="{% url 'profile' %}" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Profile </a>
-                <a href="{% url 'logout' %}" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Logout </a>
+                <a href="{% url 'profile' %}" class="btn  me-md-2" type="button" style="color: white; background-color:rgb(44, 87, 196);"type="submit" > Profile </a>
+                <a href="{% url 'logout' %}"class="btn me-md-2" type="button"style="color: white; background-color:rgb(44, 87, 196);"type="submit" > Logout </a>
               {% else %}
-                <a href="{% url 'register' %}" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Create Account </a>
-                <a href="{% url 'login' %}" class="btn" style="color: white; background-color: #fd5e14; margin-left: 10px; "type="submit" id="header-links">Log In</a>
+                <a href="{% url 'register' %}" class="btn me-md-2" type="button"style="color: white; background-color:rgb(44, 87, 196);;"type="submit" id="header-links"> Create Account </a>
+                <a href="{% url 'login' %}"class="btn me-md-2" type="button"style="color: white; background-color:rgb(44, 87, 196); margin-left: 10px; "type="submit" id="header-links">Log In</a>
               {% endif %}
               </form>
           </div>

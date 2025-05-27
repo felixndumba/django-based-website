@@ -28,9 +28,9 @@ def register(request):
 def profile(request):
     return render(request, 'users/profile.html')
 
-@login_required  # Ensures only logged-in users can access this
+@login_required 
 def custom_logout(request):
-    logout(request)  # Django's logout function
+    logout(request) 
     return render(request, 'users/login.html') 
 
 @login_required()
@@ -43,4 +43,3 @@ def featuredproducts(request):
 
 def paymentmethod(request):
     return render(request,'users/payment.html')
-

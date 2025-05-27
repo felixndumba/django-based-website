@@ -14,51 +14,6 @@
   gap: 10px;
  
 }
-#header-text{
-  color: white;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
-  margin-top: 100px;
-}
-#header-image{
-  margin-top: 30px;
-  margin-top: 30px;
-}
-#header-paragraph{
-  font-size: 20px;
-  padding-top: 30px;
-  font-weight: lighter;
-}
-#header-h1{
-  font-size: 60px;
-}
-#header-links{
-  position:relative;
-  border-radius: 20px;
-  
-  padding: 10px 25px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 13px;
-  overflow: hidden;
-  transition: 0.2s;
-  margin-left: auto;
-
-}
-#header-links:hover{
-  color: #111111;
-  font-size: 15px;
-  border-radius: 6px;
-  background-color: #ffaa80;
-  box-shadow: 0 0 10px #ff8248de, 0 0 4px #ff8248,0 0 80px #ff8248;
-  transition-delay: 0.2s;
-  text-decoration: none;
-  border-radius: 9px;
-}
-#header-links:active{
-  font-size: 10px;
-}
-
 #body-link-row{
   position: relative;
   border-radius: 20px;

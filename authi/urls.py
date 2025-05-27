@@ -12,5 +12,5 @@ urlpatterns = [
     path('logout/', views.custom_logout, name="logout"),
     path('stores/',views.findstore,name="findstore"),
     path('featured/',views.featuredproducts,name="fproducts"),
-    path('payment/',views.paymentmethod,name= "payment")
-]
+    path('payment/',views.paymentmethod,name= "payment"),
+    ]
