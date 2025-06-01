@@ -20,13 +20,13 @@ footer .container {
 }
 
 .footer-column h3 {
-    color: #fd5e14; /* Orange accent */
+    color: #146dfd; 
     margin-bottom: 20px;
     font-size: 1.2rem;
     text-transform: uppercase;
 }
 .footer-column h4 {
-    color: #fd5e14; /* Orange accent */
+    color: #1443fd; 
     margin-bottom: 20px;
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -78,4 +78,3 @@ footer .container {
   box-shadow: 0 4px 8px rgb(223, 4, 4);
 }
 
-/* Platform-specific colors */

@@ -1,14 +1,13 @@
 .featured{
-    background-color:black;
+    background-color:rgba(113, 142, 180, 0.992);
   }
   .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1200/800') center/cover no-repeat;
             display: flex;
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background-color:black;
+            background-color:rgba(113, 142, 180, 0.992);
         }
 
         .hero-content {
@@ -175,5 +174,8 @@
     @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
+    }
+    #logo{
+        color: blue;
     }
 
