@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <style>
+        body{
+            background-color: rgba(9, 12, 13, 0.144);
+        }
+          .search-container {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        .search-container input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+        }
+
+        .search-container button {
+            padding: 15px 20px;
+            border: none;
+            background-color: var(--accent);
+            color: rgb(23, 21, 21);
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+ 
+
+    </style>
+     <div class="search-container">
+                <input type="text" placeholder="Enter your location..." id="location-input">
+                <button id="search-btn">Find Stores</button>
+     </div>
+</body>
+</html>
