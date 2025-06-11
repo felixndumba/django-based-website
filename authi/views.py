@@ -31,7 +31,7 @@ def profile(request):
 @login_required 
 def custom_logout(request):
     logout(request) 
-    return render(request, 'users/login.html') 
+    return render(request, 'users/logout.html') 
 
 @login_required()
 def findstore(request):
